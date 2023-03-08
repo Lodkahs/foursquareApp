@@ -8,7 +8,7 @@
 import UIKit
 import Parse
 
-class ViewController: UIViewController {
+class SingUpVC: UIViewController {
     
     
     @IBOutlet weak var userNameText: UITextField!
