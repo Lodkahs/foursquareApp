@@ -34,7 +34,8 @@ class ViewController: UIViewController {
                     
                     //segue
                     
-                    print("hi, \(user?.username ?? "sign in")")
+                    self.performSegue(withIdentifier: "toPlacesVC", sender: nil)
+                    //print("hi, \(user?.username ?? "sign in")")
                     
                 }
             }
