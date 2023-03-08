@@ -9,37 +9,53 @@ import UIKit
 import Parse
 
 class ViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var userNameText: UITextField!
+    
+    @IBOutlet weak var passwordText: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        /* let parseObject = PFObject(className: "Fruits")
-        parseObject["name"] = "Banana"
-        parseObject["calories"] = 150
+    }
+    
+    
+    @IBAction func signinClicked(_ sender: Any) {
         
-        parseObject.saveInBackground { success, error in
-            if error != nil {
-                print(error?.localizedDescription)
-            } else {
-                print("uploaded")
-            }
-        }
-        */
         
-        let query = PFQuery(className: "Fruits")
-        //query.whereKey("name", equalTo: "Apple")
-        //query.whereKey("calories", greaterThan: 120)
-        query.findObjectsInBackground { objects, error in
-            if error != nil {
-                print(error?.localizedDescription)
-            } else {
-                print(objects)
-            }
-        }
         
     }
     
+    @IBAction func signUpClicked(_ sender: Any) {
+        
+        if userNameText.text != "" && passwordText.text != "" {
+            
+            let user = PFUser()
+            user.username = userNameText.text!
+            user.password = passwordText.text!
+            
+            user.signUpInBackground { success, error in
+                if error != nil {
+                    self.makeAlert(titleInput: "Error", messageInput: error?.localizedDescription ?? "Error!")
+                } else {
+                    //segue
+                    print("created")
+                }
+            }
+            
+        } else {
+            makeAlert(titleInput: "Error", messageInput: "Username/password?")
+        }
+    }
+    
+    func makeAlert(titleInput: String, messageInput: String) {
+        let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+        alert.addAction(okButton)
+        self.present(alert, animated: true)
+    }
     
 }
 
