@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		49E6EB4629B8D5E2003D2F7C /* PlacesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E6EB4529B8D5E2003D2F7C /* PlacesVC.swift */; };
 		49E6EB4829B9033D003D2F7C /* AddPlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E6EB4729B9033D003D2F7C /* AddPlaceVC.swift */; };
+		49E6EB4A29B906E1003D2F7C /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E6EB4929B906E1003D2F7C /* MapVC.swift */; };
 		49F2445329B3ACE0002422B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F2445229B3ACE0002422B2 /* AppDelegate.swift */; };
 		49F2445529B3ACE0002422B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F2445429B3ACE0002422B2 /* SceneDelegate.swift */; };
 		49F2445729B3ACE0002422B2 /* SingUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F2445629B3ACE0002422B2 /* SingUpVC.swift */; };
@@ -22,6 +23,7 @@
 		20FEA065743C275283ACA5EA /* Pods-foursquare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foursquare.debug.xcconfig"; path = "Target Support Files/Pods-foursquare/Pods-foursquare.debug.xcconfig"; sourceTree = "<group>"; };
 		49E6EB4529B8D5E2003D2F7C /* PlacesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesVC.swift; sourceTree = "<group>"; };
 		49E6EB4729B9033D003D2F7C /* AddPlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceVC.swift; sourceTree = "<group>"; };
+		49E6EB4929B906E1003D2F7C /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		49F2444F29B3ACE0002422B2 /* foursquare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foursquare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F2445229B3ACE0002422B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49F2445429B3ACE0002422B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				49F2445629B3ACE0002422B2 /* SingUpVC.swift */,
 				49E6EB4529B8D5E2003D2F7C /* PlacesVC.swift */,
 				49E6EB4729B9033D003D2F7C /* AddPlaceVC.swift */,
+				49E6EB4929B906E1003D2F7C /* MapVC.swift */,
 				49F2445829B3ACE0002422B2 /* Main.storyboard */,
 				49F2445B29B3ACE1002422B2 /* Assets.xcassets */,
 				49F2445D29B3ACE1002422B2 /* LaunchScreen.storyboard */,
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49F2445729B3ACE0002422B2 /* SingUpVC.swift in Sources */,
+				49E6EB4A29B906E1003D2F7C /* MapVC.swift in Sources */,
 				49F2445329B3ACE0002422B2 /* AppDelegate.swift in Sources */,
 				49E6EB4629B8D5E2003D2F7C /* PlacesVC.swift in Sources */,
 				49E6EB4829B9033D003D2F7C /* AddPlaceVC.swift in Sources */,
