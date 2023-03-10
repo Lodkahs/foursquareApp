@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 import Parse
 
-class DetailsVC: UIViewController {
+class DetailsVC: UIViewController, MKMapViewDelegate {
     
     
     @IBOutlet weak var detailsImageView: UIImageView!
@@ -30,6 +30,7 @@ class DetailsVC: UIViewController {
         super.viewDidLoad()
 
         getDataFromParse()
+        detailsMapView.delegate = self
         
     }
     
@@ -88,6 +89,7 @@ class DetailsVC: UIViewController {
                         annotation.title = self.detailsPlacenameLabel.text!
                         annotation.subtitle = self.detailsTypeLabel.text!
                         self.detailsMapView.addAnnotation(annotation)
+                        
                     }
                     
                     
@@ -96,5 +98,48 @@ class DetailsVC: UIViewController {
         }
     }
     
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
+        
+        let reuseID = "pin"
+        
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseID)
+        
+        if pinView == nil {
+            pinView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: reuseID)
+            pinView?.canShowCallout = true
+            let button = UIButton(type: UIButton.ButtonType.detailDisclosure)
+            pinView?.rightCalloutAccessoryView = button
+        } else {
+            pinView?.annotation = annotation
+        }
+        
+        return pinView
+        
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if self.chosenLongitude != 0.0 && self.chosenLatitude != 0.0 {
+            let requestLocation = CLLocation(latitude: chosenLatitude, longitude: chosenLongitude)
+            
+            CLGeocoder().reverseGeocodeLocation(requestLocation) { placemarks, error in
+                if let placemark = placemarks {
+                    
+                    if placemark.count > 0 {
+                        
+                        let mkPlacemark = MKPlacemark(placemark: placemark[0])
+                        let mapItem = MKMapItem(placemark: mkPlacemark)
+                        mapItem.name = self.detailsPlacenameLabel.text
+                        
+                        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+                        
+                        mapItem.openInMaps(launchOptions: launchOptions)
+                    }
+                }
+            }
+        }
+    }
 
 }
