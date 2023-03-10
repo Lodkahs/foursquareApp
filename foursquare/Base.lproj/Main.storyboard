@@ -115,6 +115,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="vEC-6A-3Gq"/>
                     <connections>
+                        <outlet property="tableView" destination="lmd-Ix-g2a" id="E4c-Xb-a47"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="toSignUpVC" modalPresentationStyle="fullScreen" id="Kqw-cx-Mot"/>
                         <segue destination="Cpv-uc-8z1" kind="show" identifier="toAddPlaceVC" id="eU7-Yo-wJU"/>
                         <segue destination="OOj-X3-4yv" kind="show" identifier="toDetailsVC" id="zhA-4w-Tdt"/>
@@ -328,6 +329,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="eU7-Yo-wJU"/>
         <segue reference="Zc2-T2-tDw"/>
     </inferredMetricsTieBreakers>
     <resources>
