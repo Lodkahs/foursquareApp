@@ -183,7 +183,7 @@
         <scene sceneID="IXa-os-i73">
             <objects>
                 <viewController id="Cpv-uc-8z1" customClass="AddPlaceVC" customModule="foursquare" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bBT-1E-G2R">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="bBT-1E-G2R">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -216,7 +216,7 @@
                                     <constraint firstAttribute="height" constant="72" id="t1M-RQ-DV7"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Next"/>
                                 <connections>
                                     <action selector="nextButtonClicked:" destination="Cpv-uc-8z1" eventType="touchUpInside" id="Y5X-mD-j90"/>
                                 </connections>
