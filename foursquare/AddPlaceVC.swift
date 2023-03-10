@@ -32,7 +32,26 @@ class AddPlaceVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
     
     @IBAction func nextButtonClicked(_ sender: Any) {
-        performSegue(withIdentifier: "toMapVC", sender: nil)
+        
+        if placeNameText.text != "" && placeTypeText.text != "" && commentText.text != "" {
+            if let chosenImage = placeImageView.image {
+                let placeModel = PlaceModel.sharedInstance
+                placeModel.placeName = placeNameText.text!
+                placeModel.placeType = placeTypeText.text!
+                placeModel.placeComment = commentText.text!
+                placeModel.placeImage = chosenImage
+            }
+            
+            performSegue(withIdentifier: "toMapVC", sender: nil)
+            
+        } else {
+            let alert = UIAlertController(title: "Error", message: "place name/type/comment is missing!", preferredStyle: UIAlertController.Style.alert)
+            let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+            alert.addAction(okButton)
+            self.present(alert, animated: true)
+        }
+        
+        
     }
     
     @objc func chooseImage() {
